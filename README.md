@@ -2,6 +2,14 @@
 
 在对话顶部注册一个「研数」视图：切过去是一棵「数一」知识树，下方仍是原生输入框。
 
+## 安装
+
+1. 打开 Harness 的 **Plugins** 页面 → **More**（Experimental plugins）→ 打开 **Custom plugin markets**。
+2. 在 **Discover** 里添加索引地址：`https://zhongguohaoqingnian-dev.github.io/kaoyan-math-review/market.json`
+3. 找到「研数 · 考研数学复习」安装，刷新页面后对话顶部会出现「研数」标签。
+
+索引里锁定的是某个 commit，安装的是包内声明的 `dsh` bundle 与 `dsh.client`。本地开发时用 `plugin_manager` 的 `install_bundle` 指向本目录即可（profile 里存的是 path link）。
+
 ## 当前版本
 
 - 对话顶部新增「研数」标签；切过去后**整页是知识树**，没有额外的侧边目录，树本身就是导航。
@@ -136,10 +144,5 @@ DSH 没有官方商店：所谓「市场」是一份你托管的 **index JSON**�
 3. 托管索引：仓库根目录的 `market.json` 就是格式 1 的索引，已通过 GitHub Pages 托管（不能 302 跳转）。发版时用 `npm run market` 重新生成：默认把源码锁定到当前 commit（`source: git`），`npm publish` 之后改用 `npm run market -- --source npm`。
 4. 用户侧开启市场：Plugins → More（Experimental plugins）→ 打开 **Custom plugin markets**，再到 Discover 添加你的索引 URL 安装。
 
-也可以不进市场，直接装：
-
-```bash
-dsh plugin --profile desktop add kaoyan-math-review@0.12.0
-```
 
 注意 `engines.dsh` 的预发布语义：`^0.2.0` **不会**匹配 `0.2.1-rc.5`，要在当前 rc 上装得通，写 `>=0.2.1-rc.0 <0.3.0`。
