@@ -1,5 +1,5 @@
 window.__ModuleLoader__.load({
-  id: "@local/kaoyan-math-review",
+  id: "kaoyan-math-review",
   factory(require) {
     const React = require("react");
     const h = React.createElement;
