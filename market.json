@@ -1,0 +1,72 @@
+{
+  "format": 1,
+  "title": {
+    "en": "Yanshu · Kaoyan Math market",
+    "zh": "研数 · 考研数学插件市场"
+  },
+  "description": {
+    "en": "Kaoyan Math I review plugins for DeepSeek Harness.",
+    "zh": "在 DeepSeek Harness 里复习考研数学的插件。"
+  },
+  "metadata": {
+    "categories": {
+      "study": {
+        "title": {
+          "en": "Study",
+          "zh": "学习"
+        }
+      }
+    },
+    "labels": {
+      "math": {
+        "title": {
+          "en": "Math",
+          "zh": "数学"
+        }
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "kaoyan-math-review",
+      "title": {
+        "en": "Yanshu · Kaoyan Math Review",
+        "zh": "研数 · 考研数学复习"
+      },
+      "description": {
+        "en": "Math I review view with 22 chapters, 132 topics, 2011-2026 past papers and a practice calendar.",
+        "zh": "数一复习视图：22 章 132 个考点、2011–2026 真题与做题日历。"
+      },
+      "icon": "./icon.svg",
+      "author": "chenchenyanji",
+      "homepage": "https://github.com/chenchenyanji/kaoyan-math-review",
+      "repository": {
+        "url": "https://github.com/chenchenyanji/kaoyan-math-review"
+      },
+      "metadata": {
+        "category": "study",
+        "keywords": [
+          "kaoyan",
+          "math",
+          "考研",
+          "数学"
+        ],
+        "labels": [
+          "math"
+        ]
+      },
+      "versions": [
+        {
+          "version": "1.0.1",
+          "publishTimestamp": 1793670468,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.1-rc.0 <0.3.0"
+          }
+        }
+      ]
+    }
+  ]
+}

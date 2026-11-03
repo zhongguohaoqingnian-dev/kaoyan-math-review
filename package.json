@@ -1,0 +1,58 @@
+{
+  "name": "kaoyan-math-review",
+  "version": "0.12.0",
+  "description": "Kaoyan Math I review view for DeepSeek Harness: 22 chapters, 132 topics, 2011-2026 past papers, practice calendar, native composer.",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "market.json",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ]
+    }
+  },
+  "license": "MIT",
+  "author": "zhongguohaoqingnian-dev",
+  "homepage": "https://zhongguohaoqingnian-dev.github.io/kaoyan-math-review/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhongguohaoqingnian-dev/kaoyan-math-review.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zhongguohaoqingnian-dev/kaoyan-math-review/issues"
+  },
+  "keywords": [
+    "kaoyan",
+    "math",
+    "考研",
+    "数学",
+    "dsh-plugin",
+    "deepseek-harness"
+  ],
+  "engines": {
+    "dsh": ">=0.2.1-rc.0 <0.3.0"
+  },
+  "scripts": {
+    "check": "node --check client.js && node scripts/check-content.mjs",
+    "market": "node scripts/make-market.mjs"
+  }
+}

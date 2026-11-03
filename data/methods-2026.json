@@ -1,0 +1,202 @@
+{
+  "1": [
+    {
+      "topic": "多元函数微分学",
+      "title": "隐函数求偏导",
+      "summary": "**识别**：方程确定隐函数 $z(x,y)$，求 $z_x,z_y$ 的组合。\n\n**步骤**：两边对 $x$ 求偏导（$z$ 是 $x,y$ 的函数）：\n$$1-a z_x=ae^{y+az}z_x$$\n解得 $z_x=\\frac1{a(1+e^{y+az})}$；对 $y$ 求偏导得 $z_y=-\\frac{e^{y+az}}{a(1+e^{y+az})}$。\n\n**本题**：$z_x-z_y=\\frac{1+e^{y+az}}{a(1+e^{y+az})}=\\frac1a$，选 A。\n\n**易错**：对 $y$ 求导时，$e^{y+az}$ 中的 $az$ 还要乘 $z_y$，漏掉就会把 $z_y$ 算错。",
+      "chapterId": "multiderivative"
+    }
+  ],
+  "2": [
+    {
+      "topic": "无穷级数",
+      "title": "幂级数收敛域",
+      "summary": "**识别**：幂级数含 $(-1)^n$，奇偶项系数不同，先分奇偶拆成两个等比级数。\n\n**步骤**：\n1. 偶数 $n=2m$：系数 $\\left(\\frac{3+1}{4}\\right)^{2m}=1$，级数为 $\\sum x^{4m}$，收敛 $|x|<1$。\n2. 奇数 $n=2m+1$：系数 $\\left(\\frac12\\right)^{2m+1}$，级数为 $\\sum \\frac12\\left(\\frac{x^4}{4}\\right)^m$，收敛 $|x|<\\sqrt2$。\n3. 取公共部分 $|x|<1$。\n\n**端点**：$x=\\pm1$ 时偶数项为 $1$，通项不趋于 $0$，发散；故收敛域 $(-1,1)$，选 D。\n\n**易错**：只对一个子级数求半径；忘记检查端点。",
+      "chapterId": "series"
+    }
+  ],
+  "3": [
+    {
+      "topic": "一元函数微分学",
+      "title": "单调、极值与凹凸性",
+      "summary": "**识别**：判断单调、极值、凹凸与割线斜率的关系，逐项找反例。\n\n**要点**：\n- 极值是局部性质，不能反推两侧单调，A、B 错。\n- 凹函数（$f''\\ge0$）固定右端点时，割线斜率随左端点右移而递增，C 对。\n- 割线斜率递增是凸性的刻画，但 D 的表述要看区间和严格性。\n\n**本题**：用凹函数割线斜率单调性选 C；A/B 可举平段或振荡的反例。\n\n**易错**：把“极小值”与“先减后增”当成充要条件。",
+      "chapterId": "derivative"
+    }
+  ],
+  "4": [
+    {
+      "topic": "多元函数积分学",
+      "title": "三重积分：球坐标",
+      "summary": "**识别**：区域由球面与圆锥面围成，被积函数只含 $r^2+z^2$，球坐标最省。\n\n**步骤**：令 $x=\\rho\\sin\\varphi\\cos\\theta,\\ y=\\rho\\sin\\varphi\\sin\\theta,\\ z=\\rho\\cos\\varphi$，$dV=\\rho^2\\sin\\varphi\\,d\\rho\\,d\\varphi\\,d\\theta$。球面 $\\rho=2$，圆锥 $z=r$ 即 $\\varphi=\\pi/4$，故 $0\\le\\theta\\le2\\pi,\\ 0\\le\\varphi\\le\\pi/4,\\ 0\\le\\rho\\le2$，被积函数为 $\\rho^2$。\n\n**本题**：选对应这个积分限的选项 C。\n\n**易错**：把 $\\varphi$ 的上限写成 $\\pi/2$；忘记 $dV$ 的 $\\rho^2\\sin\\varphi$。",
+      "chapterId": "multiintegral"
+    }
+  ],
+  "5": [
+    {
+      "topic": "线性代数·矩阵",
+      "title": "置换矩阵与伴随矩阵",
+      "summary": "**识别**：置换矩阵 + 伴随矩阵，抓住 $A^{-1}=A^T$ 和 $A^*=|A|A^{-1}$。\n\n**步骤**：置换矩阵每行每列一个 $1$，故 $A^{-1}=A^T$，仍是置换矩阵。$|A|=\\pm1$，所以 $A^*=|A|A^T$，是带符号的置换矩阵。\n\n**本题**：只有 B 恒成立；A/C/D 都取决于置换的奇偶性。\n\n**易错**：把 $A^*$ 直接当成 $A^{-1}$；忽略 $|A|=-1$。",
+      "chapterId": "matrix"
+    }
+  ],
+  "6": [
+    {
+      "topic": "线性代数·向量组",
+      "title": "线性表示与列空间",
+      "summary": "**识别**：列向量组表示 → 列空间包含；$Ax=\\beta$ 有解 $\\Leftrightarrow \\beta\\in\\mathrm{Col}(A)$。\n\n**步骤**：$A$ 的列可由 $B$ 的列表示 $\\Leftrightarrow$ 存在 $C$ 使 $A=BC$。若 $Ax=\\beta$，则 $\\beta=Ax=B(Cx)$，取 $y=Cx$ 得 $By=\\beta$，故 $Bx=\\beta$ 有解。\n\n**本题**：选 A。转置后 $A^T=C^TB^T$，列空间关系反转，B/D 不一定成立。\n\n**易错**：把“A 可由 B 表示”与“B 可由 A 表示”弄反。",
+      "chapterId": "vector-space"
+    }
+  ],
+  "7": [
+    {
+      "topic": "线性代数·二次型",
+      "title": "正交标准形与曲面类型",
+      "summary": "**识别**：二次型 + 圆柱面；先写对称矩阵，再求特征值。\n\n**步骤**：平方项系数在对角线，交叉项 $4x_ix_j$ 给非对角元 $2$：\n$$A=\\begin{pmatrix}a&2&2\\\\2&a&2\\\\2&2&a\\end{pmatrix}$$\n循环矩阵特征值为 $a+4,a-2,a-2$。$f=-1$ 为圆柱面 $\\Leftrightarrow$ 一个特征值为 $0$、另两个同号；$a=-4$ 得 $0,-6,-6$，正交标准型 $-6y_1^2-6y_2^2$，选 B。\n\n**易错**：交叉项系数忘记除以 $2$；把规范型与正交标准型混为一谈。",
+      "chapterId": "quadratic"
+    }
+  ],
+  "8": [
+    {
+      "topic": "概率论·数字特征",
+      "title": "正态变量的二次期望",
+      "summary": "**识别**：正态分布求 $E[(X+t)^2]$ 的最小值，用方差公式。\n\n**步骤**：\n$$E[(X+t)^2]=D(X)+[E(X)+t]^2=2+(1+t)^2$$\n故 $t=-1$ 时最小，最小值为 $2$，选 C。\n\n**易错**：$N(1,2)$ 的 $2$ 是方差不是标准差；展开时 $E(X^2)=D(X)+[E(X)]^2=3$。",
+      "chapterId": "expectation"
+    }
+  ],
+  "9": [
+    {
+      "topic": "概率论·随机变量",
+      "title": "分布函数与标准化",
+      "summary": "**识别**：分布函数关系 $F_Y(y)=F(ay+b)$，本质是线性变换/标准化。\n\n**步骤**：若 $a>0$，$F_Y(y)=P(X\\le ay+b)$，故 $Y=(X-b)/a$。由 $E(Y)=0$ 得 $b=\\mu$；由 $D(Y)=1$ 得 $a^2=\\sigma^2$，取 $a=\\sigma$，选 A。\n\n**易错**：$a<0$ 时分布函数方向改变；本题选项默认 $a>0$，但考试要会讨论。",
+      "chapterId": "random-variable"
+    }
+  ],
+  "10": [
+    {
+      "topic": "概率论·随机变量",
+      "title": "条件概率与无记忆性",
+      "summary": "**识别**：条件概率 + 混合几何分布；不能直接用几何分布的无记忆性。\n\n**步骤**：$P(X>m+n\\mid X>m)=\\frac{P(X>m+n)}{P(X>m)}$。由 $P(X=k)=2^{-(k+1)}+3^{-k}$ 分别求尾和：\n$$P(X>m)=\\frac12(2^{-m}+3^{-m})$$\n代入后比较，可得严格大于 $P(X>n)$，选 D。\n\n**易错**：把混合分布当单一几何分布；尾概率的等比求和首项/公比写错。",
+      "chapterId": "random-variable"
+    }
+  ],
+  "11": [
+    {
+      "topic": "多元函数微分学",
+      "title": "向量积与散度",
+      "summary": "**识别**：先叉积，再对分量求散度。\n\n**步骤**：\n$$F=v_1\\times v_2=\\begin{vmatrix}\\mathbf i&\\mathbf j&\\mathbf k\\\\0&x&z\\\\y&0&1\\end{vmatrix}=(x,yz,-xy)$$\n$$\\operatorname{div}F=\\partial_x x+\\partial_y(yz)+\\partial_z(-xy)=1+z$$\n\n**本题**：填 $1+z$。\n\n**易错**：叉积第二分量是 $z\\cdot y-0\\cdot1=yz$，符号别弄反；散度是每个分量对对应变量求偏导，不是对 $x,y,z$ 全求。",
+      "chapterId": "multiderivative"
+    }
+  ],
+  "12": [
+    {
+      "topic": "函数、极限与连续",
+      "title": "通分后用泰勒展开",
+      "summary": "**识别**：$\\infty-\\infty$，先通分，再用泰勒展开。\n\n**步骤**：\n$$\\frac1x-\\frac{\\ln(1+x)}{x\\sin x}=\\frac{\\sin x-\\ln(1+x)}{x\\sin x}$$\n$\\sin x=x-\\frac{x^3}{6}+\\cdots$，$\\ln(1+x)=x-\\frac{x^2}{2}+\\frac{x^3}{3}-\\cdots$，分子最低阶为 $\\frac{x^2}{2}$，分母 $\\sim x^2$，极限 $\\frac12$。\n\n**易错**：等价无穷小只能替换因子，不能直接替换加减项；先通分再展开。",
+      "chapterId": "limits"
+    }
+  ],
+  "13": [
+    {
+      "topic": "一元函数微分学",
+      "title": "参数方程求二阶导数",
+      "summary": "**识别**：参数方程求二阶导，两次链式法则。\n\n**步骤**：$x'=2\\sin2t$，$y'=1-\\sin t$，故 $\\frac{dy}{dx}=\\frac{1-\\sin t}{4\\sin t\\cos t}$。再对 $t$ 求导并除以 $x'$：\n$$\\frac{d^2y}{dx^2}=\\frac{1}{x'}\\frac{d}{dt}\\left(\\frac{y'}{x'}\\right)$$\n代入 $t=\\pi/4$ 得 $-\\frac{\\sqrt2}{8}$。\n\n**易错**：第二次求导忘记除以 $x'_t$；商的求导顺序写错。",
+      "chapterId": "derivative"
+    }
+  ],
+  "14": [
+    {
+      "topic": "一元函数积分学",
+      "title": "反常积分与分部积分",
+      "summary": "**识别**：无穷限 + 对数 $\\ln(x+1)$，分部积分。\n\n**步骤**：取 $u=\\ln(x+1),\\ dv=x^{-2}dx$：\n$$\\int_1^{\\infty}\\frac{\\ln(x+1)}{x^2}dx=\\left[-\\frac{\\ln(x+1)}{x}\\right]_1^{\\infty}+\\int_1^{\\infty}\\frac{dx}{x(x+1)}$$\n边界项为 $\\ln2$，剩余积分拆成 $\\frac1x-\\frac1{x+1}$，值为 $\\ln2$，合计 $2\\ln2$。\n\n**易错**：边界项在 $\\infty$ 处为 $0$ 要说明；拆分部分分式。",
+      "chapterId": "integral"
+    }
+  ],
+  "15": [
+    {
+      "topic": "线性代数·特征值",
+      "title": "含参特征值与最大实根",
+      "summary": "**识别**：含参矩阵特征值 + 最大实根比较。\n\n**步骤**：\n$$|\\lambda I-A|=(\\lambda-1)(\\lambda-a-2)(\\lambda-a+2)$$\n得 $1,a\\pm2$；同理 $B$ 的特征值为 $2,a\\pm1$。分段比较 $m(A)=\\max\\{1,a+2\\}$ 与 $m(B)=\\max\\{2,a+1\\}$，解得 $a<0$。\n\n**易错**：忘记比较 $1$ 与 $a+2$、$2$ 与 $a+1$；参数区间分界点。",
+      "chapterId": "eigen"
+    }
+  ],
+  "16": [
+    {
+      "topic": "概率论·数字特征",
+      "title": "泊松分布与独立性",
+      "summary": "**识别**：泊松分布 + 独立性；把 $Y$ 拆成 $X+(Y-X)$。\n\n**步骤**：$E(X)=D(X)=1$，$E(Y-X)=3-1=2$，$E(X^2)=2$。\n$$E(XY)=E[X(X+(Y-X))]=E(X^2)+E(X)E(Y-X)=2+2=4$$\n\n**易错**：误用 $E(XY)=E(X)E(Y)$（$X,Y$ 不一定独立）；题给的是 $X$ 与 $Y-X$ 独立。",
+      "chapterId": "expectation"
+    }
+  ],
+  "17": [
+    {
+      "topic": "多元函数微分学",
+      "title": "二元函数极值",
+      "summary": "**识别**：二元函数无条件极值，先驻点再 Hesse 判别。\n\n**步骤**：$f_x=e^x(2x^2+4x-y^2)$，$f_y=-2ye^x$，得驻点 $(0,0),(-2,0)$。$A=f_{xx},B=f_{xy},C=f_{yy}$：$(0,0)$ 处 $AC-B^2<0$ 为鞍点；$(-2,0)$ 处 $A<0,AC-B^2>0$ 为极大值点，极大值 $8e^{-2}$。\n\n**易错**：只求驻点不判别；$AC-B^2=0$ 时需另判。",
+      "chapterId": "multiderivative"
+    }
+  ],
+  "18": [
+    {
+      "topic": "多元函数微分学",
+      "title": "全微分条件",
+      "summary": "**识别**：$dF=Pdx+Qdy$ 是全微分 $\\Rightarrow P_y=Q_x$，再化简成关于 $f(u)$ 的方程。\n\n**步骤**：$P=\\frac{f(xy)}{x^2y},Q=\\frac{f''(xy)}{xy^2}$，求偏导并令 $u=xy$：\n$$uf'(u)-f(u)=uf'''(u)-f''(u)$$\n由 $u(f'''-f')=f''-f$ 得 $(f''-f)/u=c$。由初值定 $c=-1$，解 $f''-f=-u$，得 $f=e^{1-u}-e^{u-1}+u$。\n\n**易错**：偏导时链式法则漏乘 $x$ 或 $y$；把 $u$ 当常数。",
+      "chapterId": "multiderivative"
+    },
+    {
+      "topic": "常微分方程",
+      "title": "二阶常系数非齐次",
+      "summary": "**解方程**：$f''-f=-u$。齐次通解 $C_1e^u+C_2e^{-u}$；设特解 $Au+B$，代入得 $A=1,B=0$。由 $f(1)=1,f'(1)=-1$ 解出 $C_1=-e^{-1},C_2=e$，故 $f=e^{1-u}-e^{u-1}+u$。\n\n**易错**：特解形式设错；代初值时把 $u=1$ 与 $x,y$ 混淆。",
+      "chapterId": "ode"
+    }
+  ],
+  "19": [
+    {
+      "topic": "多元函数积分学",
+      "title": "补线用格林公式",
+      "summary": "**识别**：非闭合曲线积分，补线用格林公式。\n\n**步骤**：$P=e^{x^2}\\sin x-2xy,Q=6x-x^2-y\\cos^4y$，$Q_x-P_y=6-2x+2x=6$。补弦 $BA$，令 $C=L+BA$ 为逆时针闭合曲线：\n$$I=\\iint_D6\\,d\\sigma-\\int_{BA}Pdx+Qdy$$\n算椭圆区域面积和 $BA$ 上的积分，得 $I=\\sqrt3\\pi-\\frac14$。\n\n**易错**：补线方向与正向；区域是半椭圆还是一半；$Q_x-P_y$ 的符号。",
+      "chapterId": "multiintegral"
+    }
+  ],
+  "20": [
+    {
+      "topic": "一元函数积分学",
+      "title": "定积分不等式与单调性",
+      "summary": "**识别**：定积分不等式 + 罗尔定理。\n\n**步骤**：由 $\\int_{-1}^1f=0$，$2a=\\int_0^1[f(x)-f(x-1)]dx>0$（$f$ 严格递增），故 $a>0$。计算 $F(-1)=F(0)=F(1)=0$，在 $[-1,0]$、$[0,1]$ 上分别罗尔得 $F'(\\xi_1)=F'(\\xi_2)=0$，再对 $F'$ 用罗尔得 $F''(\\xi)=0$。\n\n**易错**：只找到两个 $F$ 零点不够，需要三个点两次罗尔；$F(0)$ 的计算。",
+      "chapterId": "integral"
+    },
+    {
+      "topic": "中值定理",
+      "title": "罗尔定理与辅助函数",
+      "summary": "**辅助函数**：要证 $F''(\\xi)=0$，先让 $F$ 有三个等值点，再对 $F'$ 用罗尔。$F(x)=a(1-x^2)+\\int_1^xf(t)dt$，由 $F(-1)=F(0)=F(1)=0$ 得 $F'$ 在两个区间各有一个零点，再用一次罗尔。\n\n**易错**：只对一个区间用罗尔；忘记验证 $F$ 在闭区间连续、开区间可导。",
+      "chapterId": "derivative"
+    }
+  ],
+  "21": [
+    {
+      "topic": "线性代数·向量组",
+      "title": "极大无关组与行变换",
+      "summary": "**识别**：向量组极大无关组 + 矩阵分解/幂。\n\n**步骤**：观察 $\\alpha_3=-\\alpha_1+\\alpha_2$，$\\alpha_4=\\alpha_1-\\alpha_2$，得 $H=\\begin{pmatrix}1&0&-1&1\\\\0&1&1&-1\\end{pmatrix}$，$A=GH$。求 $A^{10}$ 用 $A^n=G(HG)^{n-1}H$，先算 $2\\times2$ 的 $HG$，再乘。\n\n**易错**：直接算 $4\\times4$ 的 $A^{10}$；$H$ 的列顺序/符号。",
+      "chapterId": "vector-space"
+    },
+    {
+      "topic": "线性代数·矩阵",
+      "title": "矩阵幂的降维",
+      "summary": "**降维**：$A=GH$ 是 $4\\times2$ 与 $2\\times4$ 的乘积，直接算 $A^{10}$ 很重；用\n$$A^{10}=G(HG)^9H$$\n把高次幂降到 $2\\times2$ 的 $HG$。先算 $HG$，再算它的 $9$ 次幂，最后左右乘回 $G,H$。\n\n**易错**：把 $A^{10}$ 写成 $G^{10}H^{10}$（矩阵乘法不可交换）；$HG$ 的幂次写成 $10$。",
+      "chapterId": "matrix"
+    }
+  ],
+  "22": [
+    {
+      "topic": "概率论·数理统计",
+      "title": "指数分布与次序统计量",
+      "summary": "**识别**：指数分布 + 截尾试验 + 无偏估计。\n\n**步骤**：$k=1$ 时 $T=\\min(X_1,\\ldots,X_n)$，$P(T>t)=e^{-nt/\\theta}$，$f_T(t)=\\frac n\\theta e^{-nt/\\theta}$；$E(T)=\\theta/n$，取 $a=n$ 使 $aT$ 无偏，$D(nT)=\\theta^2$。\n\n**易错**：把 $T$ 的均值当成 $\\theta$；漏掉 $n$ 个元件取最小值的 $n/\\theta$ 率。",
+      "chapterId": "statistics"
+    },
+    {
+      "topic": "概率论·参数估计",
+      "title": "截尾试验的似然",
+      "summary": "**k 个失效的似然**：前 $k$ 个次序统计量的联合密度含 $\\theta^{-k}e^{-[\\sum t_i+(n-k)t_k]/\\theta}$；对数似然求导得\n$$\\hat\\theta=\\frac1k\\left[\\sum_{i=1}^kt_i+(n-k)t_k\\right]$$\n再验证 $E(\\hat\\theta)=\\theta$；方差可用次序统计量的分布计算。\n\n**易错**：截尾试验的似然指数项；忘记 $(n-k)t_k$。",
+      "chapterId": "estimation"
+    }
+  ]
+}

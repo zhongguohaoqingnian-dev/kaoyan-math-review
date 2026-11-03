@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="研数 · 考研数学复习">
+  <defs>
+    <linearGradient id="bg" x1="6" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3378F6"/>
+      <stop offset="0.55" stop-color="#2E6BE6"/>
+      <stop offset="1" stop-color="#0E9F9A"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="10" y1="8" x2="40" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="58" height="58" rx="17" fill="url(#bg)"/>
+  <rect x="3" y="3" width="58" height="58" rx="17" fill="url(#shine)"/>
+  <path d="M21.5 19.5h22L32.5 32l11 12.5h-22"
+        fill="none" stroke="#FFFFFF" stroke-width="4.4"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="47" cy="18" r="3.1" fill="#FFFFFF" fill-opacity="0.92"/>
+</svg>
