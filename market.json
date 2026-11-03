@@ -5,7 +5,7 @@
     "zh": "研数 · 考研数学插件市场"
   },
   "description": {
-    "en": "Kaoyan Math I review plugins for DeepSeek Harness.",
+    "en": "Kaoyan Math I review plugin for DeepSeek Harness with Math I & II past papers.",
     "zh": "在 DeepSeek Harness 里复习考研数学的插件。"
   },
   "metadata": {
@@ -34,8 +34,8 @@
         "zh": "研数 · 考研数学复习"
       },
       "description": {
-        "en": "Kaoyan Math I review view for DeepSeek Harness: 22 chapters, 132 topics, 2011-2026 past papers, practice calendar, native composer.",
-        "zh": "数一复习视图：22 章 132 个考点、2011–2026 真题与做题日历。"
+        "en": "Kaoyan Math I & II review view for DeepSeek Harness: 21 chapters, 132 topics, 2011-2026 papers for both exams, practice calendar, native composer.",
+        "zh": "数一复习视图：21 章 132 个考点、数一/数二 2011–2026 真题与做题日历。"
       },
       "icon": "./icon.svg",
       "author": "zhongguohaoqingnian-dev",
@@ -59,12 +59,12 @@
       },
       "versions": [
         {
-          "version": "0.12.0",
-          "publishTimestamp": 1793670689,
+          "version": "0.14.0",
+          "publishTimestamp": 1793687011,
           "source": {
             "type": "git",
             "url": "https://github.com/zhongguohaoqingnian-dev/kaoyan-math-review",
-            "commit": "aa7eb674810acfbb874dce0428c0fce5dcb23590"
+            "commit": "da5fbe821c3b324814bb69bb52a5071dad7cbe51"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.0 <0.3.0"
