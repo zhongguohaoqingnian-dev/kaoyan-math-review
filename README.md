@@ -126,17 +126,20 @@ node scripts/check-content.mjs   # 解析全部公式，查 $、花括号、环�
 
 ## 发布到插件市场
 
-DSH 没有官方商店：所谓「市场」是一份你托管的 **index JSON**，用户在对话框右侧的 Plugins → Discover 里添加它的 URL 后即可搜索、安装。
+仓库：<https://github.com/zhongguohaoqingnian-dev/kaoyan-math-review>
+市场索引：<https://zhongguohaoqingnian-dev.github.io/kaoyan-math-review/market.json>
+
+DSH 没有官方商店：所谓「市场」是一份你托管的 **index JSON**，用户在 Plugins → Discover 里添加它的 URL 后即可搜索、安装。
 
 1. 改成可发布的身份（`@local/` 作用域和 `private: true` 都不能发布）：把 `package.json` 的 `name` 改成 `kaoyan-math-review`（npm 上目前未被占用），删掉 `private`，补上 `license`、`repository`、`engines.dsh`。
 2. 发布包：`npm publish --access public`（私有 registry 则加 `--registry`）。
-3. 托管索引：仓库根目录的 `market.json` 就是格式 1 的索引，放到任意 HTTPS 静态地址（GitHub Pages、raw、Vercel 均可，不能 302 跳转）。每发一个版本，同步改里面的 `version` 和 `publishTimestamp`（Unix 秒）。
+3. 托管索引：仓库根目录的 `market.json` 就是格式 1 的索引，已通过 GitHub Pages 托管（不能 302 跳转）。发版时用 `npm run market` 重新生成：默认把源码锁定到当前 commit（`source: git`），`npm publish` 之后改用 `npm run market -- --source npm`。
 4. 用户侧开启市场：Plugins → More（Experimental plugins）→ 打开 **Custom plugin markets**，再到 Discover 添加你的索引 URL 安装。
 
 也可以不进市场，直接装：
 
 ```bash
-dsh plugin --profile desktop add kaoyan-math-review@1.0.1
+dsh plugin --profile desktop add kaoyan-math-review@0.12.0
 ```
 
 注意 `engines.dsh` 的预发布语义：`^0.2.0` **不会**匹配 `0.2.1-rc.5`，要在当前 rc 上装得通，写 `>=0.2.1-rc.0 <0.3.0`。

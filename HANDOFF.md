@@ -39,6 +39,13 @@
   - `useSession` 读取 running，显示「正在回复…」。
   - `openView("chat", "")` 切到完整 Chat。
 
+## 发布
+
+- 公开仓库：`zhongguohaoqingnian-dev/kaoyan-math-review`（main 分支，MIT）。
+- 市场索引：`https://zhongguohaoqingnian-dev.github.io/kaoyan-math-review/market.json`（GitHub Pages 直接托管仓库根目录，`.nojekyll` 关闭 Jekyll）。
+- 发版：改 `package.json` 版本 → `npm run check` → `npm run market`（锁定当前 commit）→ commit & push；要发 npm 就 `npm publish` 后 `npm run market -- --source npm` 再 push。
+- 本地开发安装：`plugin_manager` 的 `install_bundle` 指向本仓库目录，profile 里是 path link。
+
 ## 文件
 
 - `client.js`：全部内容与 UI。顺序大致是：
