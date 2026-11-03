@@ -226,6 +226,8 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--db", type=Path, default=DEFAULT_DB)
     parser.add_argument("--root", type=Path, default=DEFAULT_ROOT)
+    parser.add_argument("--subject", default="数学一")
+    parser.add_argument("--tag", default="数一")
     parser.add_argument("--out", type=Path, default=Path(__file__).resolve().parents[1] / "data" / "papers-2011-2026.json")
     args = parser.parse_args()
 
@@ -236,12 +238,13 @@ def main() -> None:
         """
         SELECT id, year, title, total_score, duration_minutes
         FROM exam_papers
-        WHERE subject LIKE '%数学一%'
+        WHERE subject LIKE ?
           AND year BETWEEN 2011 AND 2026
           AND title LIKE '%全国硕士研究生招生考试%'
           AND deleted_at IS NULL
         ORDER BY year DESC
-        """
+        """,
+        (f"%{args.subject}%",),
     ).fetchall()
 
     output = []
@@ -357,6 +360,7 @@ def main() -> None:
 
         output.append(
             {
+                "subject": args.tag,
                 "year": paper["year"],
                 "title": paper["title"],
                 "total": paper["total_score"],

@@ -1,7 +1,7 @@
 {
   "name": "kaoyan-math-review",
-  "version": "0.12.0",
-  "description": "Kaoyan Math I review view for DeepSeek Harness: 22 chapters, 132 topics, 2011-2026 past papers, practice calendar, native composer.",
+  "version": "0.14.0",
+  "description": "Kaoyan Math I & II review view for DeepSeek Harness: 21 chapters, 132 topics, 2011-2026 papers for both exams, practice calendar, native composer.",
   "type": "module",
   "exports": {
     ".": "./index.js",

@@ -16,7 +16,7 @@
 - 内容下方保留**原生对话输入框**（模型、权限、附件、排队等能力都在），可以边看边发消息让我改。
 - 输入框上方有一条**「最近回复」**：实时显示我最后一条回复（流式时显示“正在回复…”），不用切回 Chat 就能看到；点“展开 Chat”看完整历史。
 - 左侧仍然是 Harness 自带的会话侧边栏，不再有第二个导航栏。
-- 面向**数一**，覆盖大纲全部 **22 章、132 个考点**：
+- 面向**数一**，覆盖大纲全部 **21 章、132 个考点**：
   - 高数 8 章（极限、一元微分、一元积分、空间解析几何、多元微分、多元积分、级数 47 个考点 + 常微分方程 14 个）；
   - 线代 6 章 36 个考点；
   - 概率 8 章 35 个考点。
@@ -82,7 +82,7 @@ kaoyan-math-review/
 
 知识树由 `SUBJECTS` 驱动。给某一章加内容时，把该章 `status` 改成 `"ready"`，并让 `sections` 指向内容数组；树会自动出现该章的板块和考点，点击即可复习。
 
-数一大纲的 22 章已全部 `ready`，新章内容写在 `CALCULUS`、`LINEAR`、`PROBABILITY` 里，例如：
+数一大纲的 21 章已全部 `ready`，新章内容写在 `CALCULUS`、`LINEAR`、`PROBABILITY` 里，例如：
 
 ```js
 CALCULUS.series = [ /* 板块数组，结构同 SECTIONS */ ];
@@ -94,11 +94,13 @@ PROBABILITY.estimation = [ /* 同上 */ ];
 
 ### 历年真题
 
-真题数据由 `scripts/extract_papers.py` 从本机 `数一学习 OS-海岛版/data/mathos.sqlite` 只读抽取，经 LaTeX 清洗后写入 `data/papers-2011-2026.json`；`scripts/embed_papers.py` 再把它嵌进 `client.js` 的 `PAPERS` 常量。重新生成：
+真题数据由 `scripts/extract_papers.py` 从本机 `数一学习 OS-海岛版/data/mathos.sqlite` 只读抽取，经 LaTeX 清洗后写入 `data/papers-2011-2026.json`（数一）和 `data/papers-math2-2011-2026.json`（数二）；`client.js` 顶部的 `PAPERS` / `PAPERS_MATH2` 是生成块。重新生成：
 
 ```bash
 python3 scripts/extract_papers.py
-python3 scripts/embed_papers.py
+python3 scripts/extract_papers.py --subject 数学二 --tag 数二 --out data/papers-math2-2011-2026.json
+python3 scripts/embed_papers.py          # 数一
+python3 scripts/embed_math2.py           # 数二（新增脚本）
 node --check client.js
 ```
 

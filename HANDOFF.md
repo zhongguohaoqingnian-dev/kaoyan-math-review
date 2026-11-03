@@ -20,14 +20,16 @@
 - **高数 8 章全部 `ready`：常微分方程 14 个考点 + 其余七章 47 个考点、26 个板块**（极限 7、一元微分 8、一元积分 7、空间解析几何 5、多元微分 7、多元积分 7、级数 6）。
 - **线性代数 6 章全部 `ready`：36 个考点、18 个板块**（行列式 6、矩阵 7、向量 6、线性方程组 5、特征值 6、二次型 6）。
 - **概率论与数理统计 8 章全部 `ready`：35 个考点、25 个板块**（随机事件 5、随机变量 5、多维随机变量 4、数字特征 5、大数定律 4、数理统计基本概念 4、参数估计 4、假设检验 4）。
-- 数一大纲 22 章全部 `ready`，全科共 132 个考点（14 + 47 + 36 + 35）、73 个板块。
+- 数一大纲 21 章全部 `ready`，全科共 132 个考点（14 + 47 + 36 + 35）、73 个板块。
 - 内容按科目分三个对象：`CALCULUS`（高数其余七章）、`LINEAR`、`PROBABILITY`，都按章 id 分键；常微分方程仍是最早的 `SECTIONS` / `CONTENT.ode`。`SUBJECTS` 里每章用 `sections` 指向对应数组。
 - `POINTS` 现在横跨「高数 → 线代 → 概率」全部已录章节，上一个 / 下一个考点可跨章连续翻。
 - 树默认展开三个科目（`root`、`calculus`、`linear`、`probability`），进页面就能看到各科的章列表；章本身仍是折叠的。
-- 22 章全部有内容，「待建」占位页目前不会再出现（`status: "soon"` 的判断仍保留，便于将来加章）。
+- 21 章全部有内容，「待建」占位页目前不会再出现（`status: "soon"` 的判断仍保留，便于将来加章）。
 - 点具体考点进入详情页：左上角「← 知识树」，底部「上一个 / 下一个考点」。
+- 树里现在有两个真题文件夹：**数一历年真题**（16 套）和 **数二历年真题**（16 套）。数二试卷复用同一个 PaperView / QuestionView，状态 key 用 `数二-年份-题号`，不覆盖数一记录。
 - 点年份进入试卷页：题目列表；点任意题目进入详情页，上方完整题目，下方答案 + 解析；支持「上一题 / 下一题」「返回试卷」；试卷底部「上一套 / 下一套」。
 - 题目详情有 **对 / 不会 / 错** 三个状态按钮，再点取消；试卷列表显示每题标记和统计；localStorage key `dsh.kaoyan-math.question-status.v1`。
+- `conversation.input.left` 注册了「截图」按钮：`getDisplayMedia` 抓帧 → `uiConversation.createDrafts` → `inputActions.addAttachments`；失败回退文件选择。
 - 知识树下方是 **真题日历**：按天记录题目状态，点日期查看当天列表，组顺序固定为 不会 → 错 → 对；条目可点回题目详情。history key `dsh.kaoyan-math.question-history.v1`。
 - 2026 年每题详情有默认折叠的 **「本题考点 / 方法」**，点开展示 1–2 个考点和方法速查；数据在 `data/methods-2026.json` → `PAPER_METHODS`。其他年份暂未加。
 - 方法卡与知识树共用同一套 `method` 节点：每个方法有 `chapterId`，构建 `CHAPTER_METHODS` 后挂到对应章节下，带「方法」标签；方法卡上的「知识树」按钮打开 `MethodView`，方法页列出相关真题。
@@ -59,7 +61,8 @@
 - `package.json`：`dsh.client.inject` 含 `@deepseek-ai/dsh-client-ui-conversation` 和 `@deepseek-ai/dsh-client-ui-layout`。
 - `locale/zh.json`、`locale/en.json`：插件管理器显示用。
 - `icon.svg`：插件图标。
-- `data/papers-2011-2026.json`：16 套真题的抽取结果。
+- `data/papers-2011-2026.json`：数一 16 套真题的抽取结果。
+- `data/papers-math2-2011-2026.json`：数二 16 套真题的抽取结果。
 - `market.json`：插件市场索引（format 1），发布到 npm 后配合 HTTPS 静态托管给 Discover 用。
 - `data/methods-2026.json`：2026 年 22 题的考点/方法速查。
 - `scripts/extract_papers.py`：从海岛版 SQLite 只读抽取、清洗 LaTeX、提取答案/图片。

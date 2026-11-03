@@ -49,7 +49,7 @@ const index = {
   format: 1,
   title: { en: "Yanshu · Kaoyan Math market", zh: "研数 · 考研数学插件市场" },
   description: {
-    en: "Kaoyan Math I review plugins for DeepSeek Harness.",
+    en: "Kaoyan Math I review plugin for DeepSeek Harness with Math I & II past papers.",
     zh: "在 DeepSeek Harness 里复习考研数学的插件。",
   },
   metadata: {
@@ -62,7 +62,7 @@ const index = {
       title: { en: "Yanshu · Kaoyan Math Review", zh: "研数 · 考研数学复习" },
       description: {
         en: pkg.description,
-        zh: "数一复习视图：22 章 132 个考点、2011–2026 真题与做题日历。",
+        zh: "数一复习视图：21 章 132 个考点、数一/数二 2011–2026 真题与做题日历。",
       },
       icon: "./icon.svg",
       author: pkg.author,
